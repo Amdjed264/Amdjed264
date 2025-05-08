@@ -1,0 +1,84 @@
+# Banking system:
+def main():
+    # Define the correct login credentials and starting balance
+    USERNAME = "Madani"           # Correct username
+    PASSWORD = "051106"           # Correct password
+    balance = 0.0                 # Initial account balance (float)
+
+    # ------------------------ LOGIN SYSTEM ------------------------
+
+    max_attempts = 3              # Set maximum login attempts allowed
+    attempts = 0                  # Counter to track failed attempts
+
+    # Login loop that allows up to 3 attempts
+    while attempts < max_attempts:
+        username = input("Enter username: ")    # Ask for username
+        password = input("Enter password: ")    # Ask for password
+
+        # If both username and password match, allow access
+        if username == USERNAME and password == PASSWORD:
+            print("Login successful!")
+            break  # Exit the login loop
+        else:
+            attempts += 1  # Count this as a failed attempt
+            print(f"Invalid credentials. You have {max_attempts - attempts} attempt(s) left.\n")
+    else:
+        # If 3 failed attempts, exit the program
+        print("Too many failed attempts. Exiting the system.")
+        return  # Exit the main function completely
+
+    # ------------------------ MAIN MENU LOOP ------------------------
+
+    # This loop keeps running until the user chooses to exit
+    while True:
+        print("\nMain Menu:")
+        print("1. Check balance")
+        print("2. Deposit money")
+        print("3. Withdraw money")
+        print("4. Exit the system")
+
+        choice = input("Please select an option (1-4): ")
+
+        # Option 1: Show current balance
+        if choice == "1":
+            print(f"Your Balance is £{balance:.2f}")  # Format to 2 decimal places
+
+        # Option 2: Deposit money into account
+        elif choice == "2":
+            try:
+                deposit_amount = float(input("Enter amount to deposit: "))
+                if deposit_amount > 0:
+                    balance += deposit_amount  # Add to balance
+                    print(f"Deposit successful. New balance is: ${balance:.2f}")
+                else:
+                    print("Deposit amount must be a positive number.")
+            except ValueError:
+                # Handles the case when user enters a non-number input
+                print("Invalid input. Please enter a valid number.")
+
+        # Option 3: Withdraw money from account
+        elif choice == "3":
+            try:
+                withdraw_amount = float(input("Enter amount to withdraw: "))
+                if withdraw_amount <= balance:
+                    balance -= withdraw_amount  # Subtract from balance
+                    print(f"Withdrawal successful. New balance is: ${balance:.2f}")
+                else:
+                    print(f"Insufficient funds. Your current balance is: ${balance:.2f}")
+            except ValueError:
+                print("Invalid input. Please enter a valid number.")
+
+        # Option 4: Exit the system
+        elif choice == "4":
+            print("Exiting the system. Goodbye!")
+            break  # Break out of the loop and end the program
+
+        # If user enters an invalid option (not 1-4)
+        else:
+            print("Invalid option. Please try again.")
+
+# ------------------------ PROGRAM ENTRY POINT ------------------------
+
+# This line ensures the program starts by calling main()
+if __name__ == "__main__":
+    main()
