@@ -1,4 +1,3 @@
 - 👋 Hi, I’m @Amddjed264
 - 👀 I’m interested in Aviation
 - 🌱 I’m currently learning Python, C++, JavaScript and CSS.
-- 💞️ I’m looking to collaborate on ...
