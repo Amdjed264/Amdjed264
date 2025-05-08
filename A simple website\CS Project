@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Meta viewport for responsive design -->
+    <meta name="Amdjed's Aviation" content="width=device-width, initial-scale=1.0">
+    <title>Amdjed's Aviation | Modern Air Travel Solutions</title>
+
+    <!-- Google Fonts for clean, professional typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset margins and apply box-sizing globally */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global body styles for font and color scheme */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #0a192f; /* Deep navy background */
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Header styling (sticky top navbar) */
+        .header {
+            background: rgba(10, 25, 47, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Flex container for logo and nav links */
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Website logo text */
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #64ffda; /* Teal color for branding */
+            text-decoration: none;
+        }
+
+        /* Horizontal navigation links */
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        /* Nav link styles and hover effect */
+        .nav-links a {
+            color: #ccd6f6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #64ffda;
+        }
+
+        /* Hero section with background image */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)),
+                url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        /* Centered hero content */
+        .hero-content {
+            max-width: 800px;
+        }
+
+        /* Main headline in hero section */
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Services section container */
+        .services {
+            padding: 5rem 5%;
+            background: #112240;
+        }
+
+        /* Grid layout for services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Card styles for each service */
+        .service-card {
+            background: rgba(17, 34, 64, 0.8);
+            padding: 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px); /* Hover animation */
+        }
+
+        /* Gallery grid setup */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            padding: 2rem 5%;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 16/9;
+        }
+
+        /* Gallery image formatting */
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Contact section styles */
+        .contact {
+            padding: 5rem 5%;
+            background: #0a192f;
+            text-align: center;
+        }
+
+        /* Contact form layout */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact information section */
+        .contact-info {
+            margin-top: 2rem;
+        }
+
+        .contact-info a {
+            color: #64ffda;
+            text-decoration: none;
+        }
+
+        /* Animation for hero text */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile navigation fix: hide links on small screens */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Fixed navigation bar -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">Amdjed's Aviation</a>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero section with inspirational message -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Wings of Passion</h1>
+            <p>Since childhood, I’ve been captivated by the skies... I belong to them.</p>
+        </div>
+    </section>
+
+    <!-- Services section highlighting aviation career paths -->
+    <section class="services" id="services">
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Pilot's Jobs</h3>
+                <p>Pilots carry the sky's greatest responsibility...</p>
+            </div>
+            <div class="service-card">
+                <h3>Flight Training</h3>
+                <p>Flight training is where ordinary dedication meets extraordinary dreams...</p>
+            </div>
+            <div class="service-card">
+                <h3>Maintenance</h3>
+                <p>Maintenance crews are the silent guardians of the sky...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image gallery with aviation-themed images -->
+    <section class="gallery" id="gallery">
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Aircraft">
+        </div>
+        <div class="gallery-item">
+            <!-- Imgur embedded image -->
+            <blockquote class="imgur-embed-pub" lang="en" data-id="smC3C58">
+                <a href="https://imgur.com/smC3C58">View post on imgur.com</a>
+            </blockquote>
+            <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+        </div>
+        <div class="gallery-item">
+            <blockquote class="imgur-embed-pub" lang="en" data-id="wAshVdq">
+                <a href="https://imgur.com/wAshVdq">View post on imgur.com</a>
+            </blockquote>
+            <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+        </div>
+    </section>
+
+    <!-- Contact section with a styled form -->
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>If you’d like to connect, send a message below or reach out via email or Instagram!</p>
+
+        <!-- Simple contact form (non-functional placeholder) -->
+        <form>
+            <div style="display: flex; flex-direction: column; gap: 15px; background: white; padding: 25px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 500px; margin: auto;">
+                <label for="name" style="font-weight: bold;">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Claudia Papi" required style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;">
+
+                <label for="email" style="font-weight: bold;">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="ClaudiaPapi@example.com" required style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;">
+
+                <label for="message" style="font-weight: bold;">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;"></textarea>
+
+                <input type="submit" value="Send Message" style="background-color: #004080; color: white; padding: 12px; font-size: 1rem; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease;">
+            </div>
+        </form>
+
+        <!-- Contact details for social and direct communication -->
+        <div class="contact-info">
+            <p>Email: <a href="mailto:midoumohamed123378@gmail.com">midoumohamed123378@gmail.com</a></p>
+            <p>Phone: <a href="tel:+447435448373">+44 7435 448373</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/amjed.wrld?igsh=MTE3bzEzOHJlYTV0bQ%3D%3D&utm_source=qr" target="_blank">@amjed.wrld</a></p>
+        </div>
+    </section>
+</body>
+
+</html>
